@@ -5,28 +5,14 @@ import { ManageQuestionServiceService } from '../manage-question-service.service
 import { QuestionModel } from '../questionModel'
 
 @Component({
-  selector: 'app-add-question',
-  templateUrl: './add-question.component.html',
-  styleUrls: ['./add-question.component.scss']
+  selector: 'app-view-question',
+  templateUrl: './view-question.component.html',
+  styleUrls: ['./view-question.component.scss']
 })
-export class AddQuestionComponent implements OnInit {
+export class ViewQuestionComponent implements OnInit {
   question:any;
   names:any;
   questionModel : QuestionModel;
-  questionList;
-  // checkoutForm = new FormGroup ({
-  //   QID: new FormControl(),
-  //   QuestionText: new FormControl(),
-  //   QuestionHelp: new FormControl(),
-  //   IsMultyAnsware: new FormControl(),
-  //   // Selection: new FormControl(),
-  //   // Selection: new FormArray([
-  //   //   new FormGroup({
-  //   //     OptionID: new FormControl(),
-  //   //     OptionText: new FormControl(),
-  //   //     IsSelected: new FormControl(),
-  //   //   })])
-  // });
 
   checkoutForm: FormGroup;
 
@@ -43,27 +29,12 @@ export class AddQuestionComponent implements OnInit {
     }
     this.checkoutForm = this.fb.group(sample);
     this.questionModel = sample as QuestionModel;
-    // console.log(this.checkoutForm);
   }
 
-  addOptions(): FormArray {  return this.fb.array([this.optionData]);}
-  get optionData(): FormGroup {
-    return this.fb.group({
-      OptionID: 10,
-      OptionText: "hel1o",
-      IsSelected:true
-    });
-  }
-  addAnsControl()
-  {
-    //this.checkoutForm.get('options').value
-  }
-  
   ngOnInit(): void {
     this.mangeQuestionService.getQuestionByID(1).subscribe((data)=>{
       console.log(data);
-      // this.checkoutForm = data as FormGroup;
-      // this.checkoutForm.setValue(data); // Sudharshan  - This is how we set values to form controls
+      // this.checkoutForm.setValue(data); // Sudharshan  - This is another way we set values to form controls
       this.questionModel = data as QuestionModel;
       console.log('QuestionModel', this.questionModel);
     });
@@ -84,7 +55,6 @@ export class AddQuestionComponent implements OnInit {
     this.questionModel.Selection = this.checkoutForm.value.Selection;
     this.mangeQuestionService.addQuestion(this.questionModel).subscribe((data)=>{
       console.log(data);
-      this.questionList = data["Question"];
     });
   }
 }

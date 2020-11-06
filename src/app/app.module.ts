@@ -9,10 +9,12 @@ import { from } from 'rxjs';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewQuestionListComponent } from './view-question-list/view-question-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewQuestionComponent } from './view-question/view-question.component';
 @NgModule({
   declarations: [
     AppComponent,
     AddQuestionComponent,
+    ViewQuestionComponent,
     ViewQuestionListComponent
   ],
   imports: [
