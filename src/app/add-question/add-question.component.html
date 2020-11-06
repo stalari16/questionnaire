@@ -1,0 +1,70 @@
+
+
+<div class="col-md-8 order-md-1">
+    <h4 class="mb-3">Question Details</h4>
+    <form [formGroup]="checkoutForm" (ngSubmit)="addQuestion(checkoutForm.value)" #myform="ngForm"  class="form form-register">
+        <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="QID">Question ID</label>
+          <input type="text" class="form-control" formControlName="QID" id="QID" placeholder="" value="" required>
+          <div class="invalid-feedback">        
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="QuestionText">Question Text</label>
+          <input type="text" class="form-control" formControlName="QuestionText"  id="QuestionText" placeholder="" value="" required>
+          <div class="invalid-feedback">           
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="QuestionHel">Question Help</label>
+          <input type="text" class="form-control" formControlName="QuestionHelp"  id="QuestionHelp" placeholder="" value="" required>
+          <div class="invalid-feedback">        
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="IsMultyAnsware">Is Multyselect</label>
+          <input type="checkbox" class="form-control" formControlName="IsMultyAnsware"  id="IsMultyAnsware" placeholder="" value="" required>
+          <div class="invalid-feedback">           
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <!-- <label for="Selection">Answar Text</label>
+          <input type="text" class="form-control" formControlName="Selection" id="Selection" placeholder="" value="" required>
+           -->
+        </div>
+        <div class="col-md-6 mb-3">
+  
+             
+             <!-- <div formArrayName="options" *ngFor="let line of checkoutForm.value.options; let i=index">
+              <div [formGroupName]="i">
+                <input type="checkbox"  [formControlName]="line.OptionText">
+                <label>{{line.OptionText}}</label>
+                <button class="btn btn-primary" type="button" (click)="addAnsControl()">Add Answars</button>
+              </div>
+             </div>  -->
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3"></div>
+        <div class="col-md-6 mb-3">
+            <button class="btn btn-primary" type="submit">Cancle</button>
+            <button class="btn btn-primary " type="submit">Save</button>
+        </div>
+      </div>
+    </form>
+    </div>
+
+
+
+
+
+

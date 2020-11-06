@@ -1,0 +1,21 @@
+<div>
+    <h1>Manage Questions</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of questionList">
+                <th>{{ item.QID }}</th>
+                <td>{{ item.QuestionText }}</td>
+                <td>
+                    <button type="button" >+</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
